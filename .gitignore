@@ -1,0 +1,53 @@
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore the virtual environment directory
+venv/
+env/
+
+# Ignore the Django secret key file
+*.secret_key
+
+# Ignore the database file
+*.db
+*.sqlite3
+
+# Ignore static files collected by collectstatic
+staticfiles/
+
+# Ignore media files uploaded by users
+media/
+
+# Ignore environment files
+.env
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore cache and session files
+cache/
+session/
+
+# Ignore compiled JavaScript files
+*.js.map
+
+# Ignore compiled CSS files
+*.css.map
+
+# Ignore compiled SASS files
+*.scssc
+
+# Ignore compiled TypeScript files
+*.tsbuildinfo
+
+# Ignore compiled JSX files
+*.jsx.js
+
+# Ignore Docker files
+.dockerignore
+Dockerfile*

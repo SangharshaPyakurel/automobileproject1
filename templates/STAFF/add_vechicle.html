@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row" style="margin-top: 150px;">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <form method="post" action="" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="col-12">
+                <h5 class="form-title">
+                  <span>Add Vechicle</span>
+                </h5>
+              </div>
+              {% include 'includes/messages.html' %}
+
+              <div class="col-sm-11">
+                <div class="form-group">
+                    <label>Manufacturer</label>
+                    <select class="form-control" name="grade_id" required>
+                       <option>Select Manufacturer</option>
+                       {% for i in grade %}
+                       <option value="{{i.id}}">{{i.name}}</option>
+                       {% endfor %}
+                    </select>
+                 </div>
+              </div>
+              <div class="col-sm-11">
+                <div class="form-group">
+                  <label>Model</label>
+                  <input type="text" class="form-control" name="model" required>
+                </div>
+              </div>
+              <div class="col-sm-11">
+                <div class="form-group">
+                  <label>Year</label>
+                  <input type="text" class="form-control" name="year" required>
+                </div>
+              </div>
+              <div class="col-sm-11">
+                <div class="form-group">
+                  <label>Image</label>
+                  <input type="file" class="form-control" name="image" required>
+                </div>
+              </div>
+              <div class="col-sm-11">
+                <div class="form-group">
+                  <label>Price</label>
+                  <input type="text" class="form-control"  name="price" required>
+                </div>
+              </div>
+              <div class="col-sm-11">
+                <div class="form-group">
+                    <label>Author</label>
+                    <select class="form-control" name="grade_id" required>
+                       <option>Select Author</option>
+                       {% for i in grade %}
+                       <option value="{{i.id}}">{{i.name}}</option>
+                       {% endfor %}
+                    </select>
+                 </div>
+              </div>
+                      
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">
+                  Add Vechicle
+                </button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

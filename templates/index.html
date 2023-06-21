@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Navbar -->
+    {% include 'includes/header.html' %}
+    
+    <!-- Home -->
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>We Have Everything <br>Your <span>Car</span>Need</h1>
+        <p>Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. In iste odit explicabo hic culpa eligendi, labore dolores delectus minus est, eum voluptates molestiae pariatur iure distinctio minima nihil animi? Sint.</p>
+        <!-- Home Button -->
+        <a href="#" class="btn">Discover Now</a>
+      </div>
+    </section>
+    
+    <!-- Cars Section -->
+    <section class="cars" id="cars">
+      <div class="heading">
+        <span>All Cars</span>
+        <h2>We havee all types cars</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus saepe aliquid quia illum ipsa ullam! Magnam aliquam ipsum eligendi consectetur, corrupti enim expedita, beatae architecto ducimus aperiam dolore quisquam. Labore?</p>
+      </div>
+    </section>
+
+    <!-- Cars Container -->
+    <div class="cars-container container">
+      <!-- Box 1 -->
+      {% for post in posts %}
+      <div class="box">
+        <img src="{{ post.image.url }}" alt="">
+        <h2>{{post.model}}</h2>
+        <p>{{post.author}}</p>
+
+      </div>
+      {% endfor %}
+    </div>
+    <!-- <div class="vechicle_count">
+      <h2>No.Of Vechicles</h2>
+      <h3>{{vechicle_count}}</h3>
+    </div> -->
+    <!-- About -->
+    <section class="about container" id="about">
+      <div class="about-img">
+        <img src="{% static 'img/about.png' %}" alt="">
+      </div>
+      <div class="about-text">
+        <span>About Us</span>
+        <h2>Cheap Prices With <br>Quality Cars</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci atque quo fugiat consectetur explicabo similique, vero sapiente corrupti error quis cumque aliquam nam nostrum quam optio ea tempora accusamus veritatis.</p>
+        <!-- About Button -->
+        <a href="" class="btn">Learn More</a>
+      </div>
+    </section>
+
+    <!-- Parts Section -->
+    <section class="parts" id="parts">
+      <div class="heading">
+        <span>What We Offer</span>
+        <h2>Our Car Is Always Excellence</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem non commodi dignissimos voluptatem nisi quam suscipit facilis necessitatibus. Cupiditate voluptatem et nesciunt veniam impedit excepturi vero a! Saepe, quisquam harum.</p>
+      </div>
+      <!-- Parts Container -->
+      <div class="parts-container container">
+        <!-- Box 1 -->
+        <div class="box">
+          <img src="{% static 'img/part1.png' %}" alt="">
+          <h3>Auto Spare Parts</h3>
+          <span>Rs 24500</span>
+          <i class="bx bxs-star">(6 Reviews)</i>
+          <a href="#" class="btn">Buy Now</a>
+          <a href="" class="details">View Details</a>
+        </div>
+        <!-- Box 2 -->
+        <div class="box">
+          <img src="{% static 'img/part2.png' %}" alt="">
+          <h3>Auto Spare Parts</h3>
+          <span>Rs 24500</span>
+          <i class="bx bxs-star">(6 Reviews)</i>
+          <a href="#" class="btn">Buy Now</a>
+          <a href="" class="details">View Details</a>
+        </div>
+        <!-- Box 3 -->
+        <div class="box">
+          <img src="{% static 'img/part3.png' %}" alt="">
+          <h3>Auto Spare Parts</h3>
+          <span>Rs 24500</span>
+          <i class="bx bxs-star">(6 Reviews)</i>
+          <a href="#" class="btn">Buy Now</a>
+          <a href="" class="details">View Details</a>
+        </div>
+        <!-- Box 4 -->
+        <div class="box">
+          <img src="{% static 'img/part4.png' %}" alt="">
+          <h3>Auto Spare Parts</h3>
+          <span>Rs 24500</span>
+          <i class="bx bxs-star">(6 Reviews)</i>
+          <a href="#" class="btn">Buy Now</a>
+          <a href="" class="details">View Details</a>
+        </div>
+        <!-- Box 5 -->
+        <div class="box">
+          <img src="{% static 'img/part5.png' %}" alt="">
+          <h3>Auto Spare Parts</h3>
+          <span>Rs 24500</span>
+          <i class="bx bxs-star">(6 Reviews)</i>
+          <a href="#" class="btn">Buy Now</a>
+          <a href="" class="details">View Details</a>
+        </div>
+        <!-- Box 6 -->
+        <div class="box">
+          <img src="{% static 'img/part6.png' %}" alt="">
+          <h3>Auto Spare Parts</h3>
+          <span>Rs 24500</span>
+          <i class="bx bxs-star">(6 Reviews)</i>
+          <a href="#" class="btn">Buy Now</a>
+          <a href="" class="details">View Details</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Contains -->
+    <section class="blog" id="blog">
+      <div class="heading">
+        <span>Blog & News</span>
+        <h2>Our Blog Content</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem non commodi dignissimos voluptatem nisi quam suscipit facilis necessitatibus. Cupiditate voluptatem et nesciunt veniam impedit excepturi vero a! Saepe, quisquam harum.</p>
+      </div>
+      <!-- Blog Container -->
+      <div class="blog-container container">
+           <!-- Blog 1 -->
+           <div class="box">
+             <img src="{% static 'img/car1.jpg' %}" alt="">
+             <span>Feb 14 2023</span>
+             <h3>How To Get Perfect Car At Low Price</h3>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore aspernatur fuga similique?</p>
+             <a href="#" class="blog-btn">Read More <i class="bx bx-right-arrow-alt"></i></a>
+           </div>
+           <!-- Blog 2 -->
+           <div class="box">
+             <img src="{% static 'img/car2.jpg' %}" alt="">
+             <span>Feb 14 2023</span>
+             <h3>How To Get Perfect Car At Low Price</h3>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore aspernatur fuga similique?</p>
+             <a href="#" class="blog-btn">Read More <i class="bx bx-right-arrow-alt"></i></a>
+           </div>
+           <!-- Blog 3 -->
+           <div class="box">
+             <img src="{% static 'img/car3.jpg' %}" alt="">
+             <span>Feb 14 2023</span>
+             <h3>How To Get Perfect Car At Low Price</h3>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore aspernatur fuga similique?</p>
+             <a href="#" class="blog-btn">Read More <i class="bx bx-right-arrow-alt"></i></a>
+           </div>
+           <!-- Blog 4 -->
+           <div class="box">
+             <img src="{% static 'img/car4.jpg' %}" alt="">
+             <span>Feb 14 2023</span>
+             <h3>How To Get Perfect Car At Low Price</h3>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore aspernatur fuga similique?</p>
+             <a href="#" class="blog-btn">Read More <i class="bx bx-right-arrow-alt"></i></a>
+           </div>
+      </div>
+    </section>
+
+   {% endblock %}

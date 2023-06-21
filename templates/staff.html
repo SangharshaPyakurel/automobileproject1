@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row mt-5 mb-5" style="margin-top: 150px !important;">
+
+        <div class="col-md-6">
+            <div class="card text-center mb-3" >
+                <div class="card-header">
+                    <h5 class="card-title">Add Vechicle</h5>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-success">
+                        <a href="{% url 'automobile:add_vechicle' %}" style="color: #fff;">
+                            Add Vechicle
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row mt-5 mb-5">
+        <div class="col-md-6">
+            <div class="card text-center mb-3" >
+                <div class="card-header">
+                    <h5 class="card-title">Total Cars</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{vechicle_count}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card text-center mb-3" >
+                <div class="card-header">
+                    <h5 class="card-title">Total User</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{user}}</p>
+                </div>
+            </div>
+        </div> 
+
+    </div>
+    <div class="row">
+        <div class="card text-center mb-3" >
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Manufacturer</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Author</th>
+                    <th class="text-right">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for i in vechicle_post %}
+                  <tr>
+                    <!-- <th scope="row"></th> -->
+                    <td>{{i.manufacturer.name}}</td>
+                    <td>{{i.model}}</td>
+                    <td>{{i.year}}</td>
+                    <td>{{i.image}}</td>
+                    <td>{{i.price}}</td>
+                    <td>{{i.author}}</td>
+                    <td class="text-right">
+                               <div class="actions">
+                                  <a href="" class="btn btn-sm bg-success-light mr-2">
+                                  <i class="fas fa-pen"></i>
+                                  </a>
+                                  <a href="" class="btn btn-sm bg-danger-light">
+                                  <i class="fas fa-trash"></i>
+                                  </a>
+                               </div>
+                            </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

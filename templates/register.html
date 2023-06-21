@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Navbar -->
+    {% include 'includes/header.html' %}
+    
+    <!-- /Navbar -->
+    
+    <div class="main-wrapper login-body">
+      <div class="login-wrapper">
+        <div class="container">
+          <div class="loginbox">
+            <div class="login-right">
+              <div class="login-right-wrap">
+                <h1>Register</h1>
+                <p class="account-subtitle">Access to our dashboard</p>
+
+                <form
+                  action="" method="post"
+                >
+                {% csrf_token %}
+                  <div class="form-group">
+                    {{form.username}}
+                  </div>
+                  <div class="form-group">
+                    {{form.email}}
+                  </div>
+                  <div class="form-group">
+                    {{form.password1}}
+                  </div>
+                  <div class="form-group">
+                    {{form.password2}}
+                  </div>
+                  <!-- <div class="d-flex mb-3 align-items-center">
+                    <label class="control control--checkbox mb-0"><span class="caption">SuperUser</span>
+                        {{ form.is_superuser }}
+                      <div class="control__indicator"></div>
+                    </label>
+                  </div> -->
+                  <div class="d-flex mb-3 align-items-center">
+                    <label class="control control--checkbox mb-0"><span class="caption">customer</span>
+                        {{ form.is_customer }}
+                      <div class="control__indicator"></div>
+                    </label>
+                  </div>
+                  <div class="d-flex mb-3 align-items-center">
+                    <label class="control control--checkbox mb-0"><span class="caption">Staff</span>
+                        {{ form.is_staff }}
+                      <div class="control__indicator"></div>
+                    </label>
+                  </div>
+                  <div class="form-group mb-0">
+                    <button class="btn btn-primary btn-block" type="submit" name="create_user">
+                      Register
+                    </button>
+                  </div>
+                </form>
+                {{form.errors}}
+                <div class="login-or">
+                  <span class="or-line"></span>
+                  <span class="span-or">or</span>
+                </div>
+                <div class="text-center dont-have">
+                  Already have an account? <a href="{% url 'automobile:login' %}">Login</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}

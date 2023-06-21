@@ -1,0 +1,48 @@
+<!-- Navbar -->
+<style>
+  .hello-msg{
+    font-size: 18px;
+    margin-right: 20px;
+  }
+</style>
+<header>
+    <!-- Nav Container -->
+    <div class="nav container">
+      <!-- Menu Icon -->
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <!-- Logo -->
+      <a href="" class="logo">Car<span>Point</span></a>
+      <!-- Nav List -->
+      <ul class="navbar">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#cars">Cars</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#parts">Parts</a></li>
+        <li><a href="#blog">Our Blog</a></li>
+        
+        <li><a href="#">
+          {% if user.is_authenticated %}
+          <span class="hello-msg">Hello,{{request.user}}</span>
+          <li><a href="{% url 'automobile:logout' %}">Logout</a></li>
+          {% else %}
+          <div class="dropdown">
+          <span>User Account</span>
+          <div class="dropdown-content">
+            <ul>
+              <li><a href="{% url 'automobile:login' %}" style="text-decoration: none;">Login</a></li>
+              <li><a href="{% url 'automobile:register' %}" style="text-decoration: none;">Registration</a></li>
+            </ul>
+          </div>
+        </div></a></li>
+        {% endif %}
+        
+      </ul>
+      <!-- Search Icon -->
+      <i class='bx bx-search' id="search-icon"></i>
+      <!-- Search Box -->
+      <div class="search-box container">
+        <input type="search" name="" id="" placeholder="Search here...">
+      </div>
+    </div>
+</header>
+  <!-- /Navbar -->

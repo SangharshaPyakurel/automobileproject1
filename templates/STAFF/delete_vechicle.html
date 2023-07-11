@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 border border-2 p-2" style="margin-top: 80px; margin-bottom: 10px;">
+      <h2>Delete Instance</h2>
+      <p>Are you sure you want to delete <strong>{{ instance.model }}</strong>?</p>
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
